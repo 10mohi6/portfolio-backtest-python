@@ -4,7 +4,7 @@ setup(
     name="portfolio-backtest",
     version="0.1.0",
     description="portfolio-backtest is a python library \
-        for backtest portfolio asset allocation on Python 3.6 and above.",
+        for backtest portfolio asset allocation on Python 3.7 and above.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     license="MIT",
@@ -21,12 +21,11 @@ setup(
         "pandas",
         "matplotlib",
     ],
-    python_requires=">=3.6.0",
+    python_requires=">=3.7.0",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",

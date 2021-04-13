@@ -7,7 +7,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/portfolio-backtest)](https://pypi.org/project/portfolio-backtest/)
 [![Downloads](https://pepy.tech/badge/portfolio-backtest)](https://pepy.tech/project/portfolio-backtest)
 
-portfolio-backtest is a python library for backtest portfolio asset allocation on Python 3.6 and above.
+portfolio-backtest is a python library for backtest portfolio asset allocation on Python 3.7 and above.
 
 ## Installation
 
@@ -49,8 +49,8 @@ Backtest(
 ![advanced-minimum-variance-portfolio.png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-minimum-variance-portfolio.png)
 ![advanced-hrp-portfolio.png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-hrp-portfolio.png)
 ![advanced-minimum-cvar-portfolio.png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-minimum-cvar-portfolio.png)
-![advanced-return-maximize-cvar-portfolio-(target-cvar-2.5%).png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-return-maximize-cvar-portfolio-(target-cvar-2.5%).png)
-![advanced-semi-variance-portfolio-(target-return-10.0%).png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-semi-variance-portfolio-(target-return-10.0%).png)
+![advanced-return-maximize-cvar-portfolio-(target-cvar-2.5%).png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-return-maximize-cvar-portfolio-(target-cvar-2.5%25).png)
+![advanced-semi-variance-portfolio-(target-return-10.0%).png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-semi-variance-portfolio-(target-return-10.0%25).png)
 ![advanced-cumulative-return.png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-cumulative-return.png)
 
 ## Supported Portfolio
