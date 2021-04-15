@@ -11,7 +11,7 @@ portfolio-backtest is a python library for backtest portfolio asset allocation o
 
 ## Installation
 
-    $ pip install portfolio-backtest
+    $ pip install portfolio-backtest PyPortfolioOpt
 
 ## Usage
 
