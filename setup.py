@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="portfolio-backtest",
-    version="0.1.2",
+    version="0.1.3",
     description="portfolio-backtest is a python library \
         for backtest portfolio asset allocation on Python 3.7 and above.",
     long_description=open("README.md").read(),
@@ -16,11 +16,10 @@ setup(
     packages=find_packages(),
     install_requires=[
         "numpy",
-        "scikit-learn",
-        "yfinance",
         "pyportfolioopt",
-        "pandas",
+        "yfinance",
         "matplotlib",
+        "scikit-learn",
     ],
     python_requires=">=3.7.0",
     classifiers=[
