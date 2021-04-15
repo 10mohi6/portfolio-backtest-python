@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="portfolio-backtest",
-    version="0.1.0",
+    version="0.1.1",
     description="portfolio-backtest is a python library \
         for backtest portfolio asset allocation on Python 3.7 and above.",
     long_description=open("README.md").read(),

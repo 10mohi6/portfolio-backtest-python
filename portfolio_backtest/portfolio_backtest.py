@@ -71,8 +71,11 @@ class Backtest(object):
         self.mu = expected_returns.mean_historical_return(self.df)
         # self.S = risk_models.sample_cov(self.df)
         self.S = CovarianceShrinkage(self.df).ledoit_wolf()
+        self.result: list = []
 
     def _cumulative_return(self) -> None:
+        if not self.plot:
+            return
         if len(self.ticker_values) > 0:
             df = self._df(self.weights_your)
             plt.plot(df.index, df.values, label="Your Portfolio")
@@ -81,7 +84,7 @@ class Backtest(object):
         df = self._df(self.weights_minimum)
         plt.plot(df.index, df.values, label="Minimum Variance Portfolio")
         df = self._df(self.weights_hrp)
-        plt.plot(df.index, df.values, label="HRP Portfolio")
+        plt.plot(df.index, df.values, label="Hierarchical Risk Parity Portfolio")
         df = self._df(self.weights_minimum_cvar)
         plt.plot(df.index, df.values, label="Minimum CVaR Portfolio")
         if self.target_return != 0:
@@ -117,7 +120,7 @@ class Backtest(object):
         self.weights_hrp = hrp.clean_weights()
         self._plot_pie(
             p=hrp.portfolio_performance(),
-            title="HRP Portfolio",
+            title="Hierarchical Risk Parity Portfolio",
             weights=self.weights_hrp,
         )
 
@@ -204,7 +207,37 @@ class Backtest(object):
                     "{:.1f}%".format(p[1] * 100),
                 ),
             )
+            tickers = {}
+            for k, v in weights.items():
+                tickers[k] = v
+            self.result.append(
+                {
+                    "portfolio": title,
+                    "tickers": tickers,
+                    "Expected annual return": "{:.1f}%".format(p[0] * 100),
+                    "Annual volatility": "",
+                    "Sharpe Ratio": "",
+                    "Conditional Value at Risk": "{:.1f}%".format(p[1] * 100),
+                }
+            )
+            if not self.plot:
+                return
         else:
+            tickers = {}
+            for k, v in weights.items():
+                tickers[k] = v
+            self.result.append(
+                {
+                    "portfolio": title,
+                    "tickers": tickers,
+                    "Expected annual return": "{:.1f}%".format(p[0] * 100),
+                    "Annual volatility": "{:.1f}%".format(p[1] * 100),
+                    "Sharpe Ratio": "{:.2f}".format(p[2]),
+                    "Conditional Value at Risk": "",
+                }
+            )
+            if not self.plot:
+                return
             plt.text(
                 -2.1,
                 -1.5,
@@ -229,7 +262,8 @@ class Backtest(object):
         plt.clf()
         plt.close()
 
-    def run(self):
+    def run(self, plot: bool = True):
+        self.plot = plot
         if len(self.ticker_values) > 0:
             self._your_portfolio()
         self._tangency_portfolio()
@@ -241,3 +275,4 @@ class Backtest(object):
         if self.target_cvar != 0:
             self._return_maximize_cvar_portfolio()
         self._cumulative_return()
+        return self.result
