@@ -2,7 +2,7 @@
 
 [![PyPI](https://img.shields.io/pypi/v/portfolio-backtest)](https://pypi.org/project/portfolio-backtest/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![codecov](https://codecov.io/gh/10mohi6/portfolio-backtest-python/branch/master/graph/badge.svg)](https://codecov.io/gh/10mohi6/portfolio-backtest-python)
+[![codecov](https://codecov.io/gh/10mohi6/portfolio-backtest-python/branch/main/graph/badge.svg?token=EYDOX015ZS)](https://codecov.io/gh/10mohi6/portfolio-backtest-python)
 [![Build Status](https://travis-ci.com/10mohi6/portfolio-backtest-python.svg?branch=main)](https://travis-ci.com/10mohi6/portfolio-backtest-python)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/portfolio-backtest)](https://pypi.org/project/portfolio-backtest/)
 [![Downloads](https://pepy.tech/badge/portfolio-backtest)](https://pepy.tech/project/portfolio-backtest)
