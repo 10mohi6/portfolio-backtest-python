@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="portfolio-backtest",
-    version="0.1.4",
+    version="0.1.5",
     description="portfolio-backtest is a python library \
         for backtest portfolio asset allocation on Python 3.7 and above.",
     long_description=open("README.md").read(),
@@ -15,10 +15,9 @@ setup(
         asset allocation CVaR HRP Variance Minimum tangency",
     packages=find_packages(),
     install_requires=[
-        "numpy>=1.20.2",
-        "pyportfolioopt>=1.4.1",
         "yfinance",
         "matplotlib",
+        "pyportfolioopt",
         "scikit-learn",
     ],
     python_requires=">=3.7.0",
