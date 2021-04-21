@@ -107,6 +107,23 @@ pprint.pprint(bt.run(plot=True))
 ![advanced-semi-variance-portfolio-(target-return-10.0%).png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-semi-variance-portfolio-(target-return-10.0%25).png)
 ![advanced-cumulative-return.png](https://raw.githubusercontent.com/10mohi6/portfolio-backtest-python/main/tests/advanced-cumulative-return.png)
 
+### Provides a method (discrete_allocation) that can be converted into an actual allocation available for purchase by entering the latest price and desired portfolio size ($ 10,000 in this example)
+```python
+from portfolio_backtest import Backtest
+
+bt = Backtest(
+    tickers={
+        "VTI": 0.6,
+        "AGG": 0.25,
+        "GLD": 0.15,
+    }
+)
+print(bt.discrete_allocation(total_portfolio_value=10000))
+```
+```python
+{'Discrete allocation': {'VTI': 28, 'AGG': 21, 'GLD': 9}, 'Funds remaining': '$109.45'}
+```
+
 ## Supported Portfolio
 - Your Portfolio
 - Hierarchical Risk Parity Portfolio

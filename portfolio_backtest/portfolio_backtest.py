@@ -11,6 +11,7 @@ from pypfopt.risk_models import CovarianceShrinkage
 from pypfopt import HRPOpt
 from datetime import datetime, timedelta
 import pandas as pd
+from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 
 
 class Backtest(object):
@@ -297,7 +298,24 @@ class Backtest(object):
         plt.clf()
         plt.close()
 
-    def run(self, plot: bool = True):
+    def discrete_allocation(self, total_portfolio_value=10000, tickers={}) -> dict:
+        if len(self.tickers) > 0:
+            weights = self.tickers
+        elif len(tickers) > 0:
+            weights = tickers
+        else:
+            raise Exception("must specify ticker.")
+        latest_prices = get_latest_prices(self.df)
+        da = DiscreteAllocation(
+            weights, latest_prices, total_portfolio_value=total_portfolio_value
+        )
+        allocation, leftover = da.greedy_portfolio()
+        return {
+            "Discrete allocation": allocation,
+            "Funds remaining": "${:.2f}".format(leftover),
+        }
+
+    def run(self, plot: bool = True) -> list:
         self.plot = plot
         if len(self.ticker_values) > 0:
             self._your_portfolio()

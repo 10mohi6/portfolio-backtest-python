@@ -25,5 +25,10 @@ def backtest(scope_module):
 
 
 # @pytest.mark.skip
-def test_backtest(backtest):
+def test_backtest_run(backtest):
     backtest.run()
+
+
+# @pytest.mark.skip
+def test_backtest_discrete_allocation(backtest):
+    backtest.discrete_allocation()
